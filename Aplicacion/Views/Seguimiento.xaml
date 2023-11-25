@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aplicacion.Views.Seguimiento"
+             Title="{Binding Title}"
+             xmlns:model="clr-namespace:Aplicacion.Models"  
+             x:Name="BrowseItemsPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame VerticalOptions="CenterAndExpand" BackgroundColor="white" CornerRadius="20" Padding="25"  Margin="10,-20,10,0">
+                <StackLayout >
+                    <Label Text="Seguimiento Curso de Empleado" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                    <Entry x:Name="txtIdSeguimiento" IsVisible="False"/>
+                    <Entry x:Name="txtnoEmpleado" Placeholder="No. Empleado" />
+                    <Entry x:Name="txtNombre" Placeholder="Nombre de Empleado"/>
+                    <Entry x:Name="txtCurso" Placeholder="Nombre de Curso"/>
+                    <Entry x:Name="txtLugar" Placeholder="Lugar del Curso"/>
+                    <Entry x:Name="txtFecha" Placeholder="Fecha"/>
+                    <Entry x:Name="txtHora" Placeholder="Hora"/>
+                    <Picker x:Name="txtEstatus" Title="Estatus">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Programado</x:String>
+                                <x:String>En proceso</x:String>
+                                <x:String>Completo</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Entry x:Name="txtCalificacion" Placeholder="Calificacion" MaxLength="2"/>
+
+                    <Button x:Name="BtnGuardar" Text="GUARDAR" Clicked="BtnGuardar_Clicked" BackgroundColor="Black" CornerRadius="10" TextColor="White" HeightRequest="40" WidthRequest="80"></Button>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="BtnActualizar" Text="ACTUALIZAR" Clicked="BtnActualizar_Clicked" IsVisible="false" BackgroundColor="Black" CornerRadius="10" TextColor="White" Grid.Column="0" VerticalOptions="CenterAndExpand" HeightRequest="40" />
+                        <Button x:Name="BtnEliminar" Text="ELIMINAR" Clicked="BtnEliminar_Clicked" IsVisible="false" BackgroundColor="Black" CornerRadius="10" TextColor="White" Grid.Column="1" VerticalOptions="CenterAndExpand" HeightRequest="40" />
+                    </Grid>
+                    <ListView x:Name="IsSeguimiento" ItemSelected="IsSeguimiento_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding idEmpleado}" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" FontSize="Micro"/>
+                                        <Label Text="{Binding Nombre}" Grid.Row="0" Grid.Column="2" HorizontalOptions="CenterAndExpand" FontSize="Micro"/>
+                                        <Label Text="{Binding Curso}" Grid.Row="0" Grid.Column="3" HorizontalOptions="CenterAndExpand" FontSize="Micro"/>
+                                        <Label Text="{Binding Lugar}" Grid.Row="0" Grid.Column="4" HorizontalOptions="CenterAndExpand" FontSize="Micro"/>
+                                        <Label Text="{Binding Fecha}" Grid.Row="0" Grid.Column="5" HorizontalOptions="CenterAndExpand" FontSize="Micro"/>
+                                        <Label Text="{Binding Hora}" Grid.Row="0" Grid.Column="6" HorizontalOptions="CenterAndExpand" FontSize="Micro"/>
+                                        <Label Text="{Binding Estatus}" Grid.Row="0" Grid.Column="7" HorizontalOptions="CenterAndExpand" FontSize="Micro"/>
+                                        <Label Text="{Binding Calificacion}" Grid.Row="0" Grid.Column="8" HorizontalOptions="CenterAndExpand" FontSize="Micro"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

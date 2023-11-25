@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aplicacion.Views.SignIn"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Registrate"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame VerticalOptions="CenterAndExpand" BackgroundColor="white" CornerRadius="20" Padding="25"  Margin="10,-20,10,0">
+            <StackLayout>
+                <Label Text="Registro" HorizontalOptions="Center" Margin="20" FontSize="30" FontAttributes="Bold"/>
+
+                <Label Text="Nombre Completo" Margin="0,5"/>
+                <Entry x:Name="txtNombreReg" Margin="0,5" />
+
+                <Label Text="Email" Margin="0,5"/>
+                <Entry x:Name="txtEmailReg" Keyboard="Email" Margin="0,5"/>
+
+                <Label Text="Contraseña" Margin="0,5"/>
+                <Entry x:Name="txtContraReg" Margin="0,5" IsPassword="True"/>
+                <Button Text="Registrar" x:Name="btnRegistrar" BackgroundColor="Black" CornerRadius="10" TextColor="White" HeightRequest="40" WidthRequest="80" Clicked="BtnRegistrar_Clicked" />
+            </StackLayout>
+        </Frame>
+           
+            <Label HorizontalOptions="End" Margin="0,0,20,100">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Regresar" FontSize="20" FontAttributes="Bold" />
+                    </FormattedString>
+                </Label.FormattedText>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+
+
+</ContentPage>

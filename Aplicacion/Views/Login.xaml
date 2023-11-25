@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Aplicacion.Views.Login"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout >
+            <Frame VerticalOptions="CenterAndExpand" BackgroundColor="white" CornerRadius="20" Padding="25"  Margin="10,-20,10,0">
+                <StackLayout >
+                    <Label Text="Inicio de Sesión" HorizontalOptions="Center" Margin="20" FontSize="30" FontAttributes="Bold"/>
+                    <StackLayout>
+                        <Entry Placeholder="Email" x:Name="txtEmailLog" Keyboard="Email" Margin="0,10" />
+                        <Entry Placeholder="Contraseña" x:Name="txtContraLog" IsPassword="True" Margin="0,10" />
+
+                        <Button Text="Iniciar Sesión" x:Name="btnLogin" BackgroundColor="Black" CornerRadius="10" TextColor="White" HeightRequest="40" WidthRequest="80" Clicked="BtnLogin_Clicked"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Label HorizontalOptions="Center" Margin="0,0,0,100">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Registrarse" FontAttributes="Bold" TextDecorations="Underline"/>
+                    </FormattedString>
+                </Label.FormattedText>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
